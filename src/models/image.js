@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     }
-    User.init({
+    Image.init({
         image: DataTypes.STRING
 
 

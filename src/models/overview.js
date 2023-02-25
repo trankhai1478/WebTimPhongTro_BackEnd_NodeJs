@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     }
-    User.init({
+    Overview.init({
         code: DataTypes.STRING,
         area: DataTypes.STRING,
         type: DataTypes.STRING,

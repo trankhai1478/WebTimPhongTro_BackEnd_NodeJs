@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     }
-    User.init({
+    Post.init({
         title: DataTypes.STRING,
         star: DataTypes.STRING,
         labelCode: DataTypes.STRING,
