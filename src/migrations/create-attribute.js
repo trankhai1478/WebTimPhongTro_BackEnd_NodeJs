@@ -11,7 +11,7 @@ module.exports = {
             price: {
                 type: Sequelize.STRING
             },
-            sacreagetar: {
+            acreage: {
                 type: Sequelize.STRING,
 
             },
