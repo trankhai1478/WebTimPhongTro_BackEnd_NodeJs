@@ -17,7 +17,7 @@ export const insertService = () => new Promise(async (resolve, reject) => {
     try {
         databody.forEach(async (item) => {
             let postId = v4();
-            let labelCode = generateCode(4);
+            let labelCode = generateCode(item?.header?.class?.classType);
             let attributesId = v4();
             let userId = v4();
             let imagesId = v4();
@@ -49,9 +49,13 @@ export const insertService = () => new Promise(async (resolve, reject) => {
                 id: imagesId,
                 image: JSON.stringify(item?.images)
             })
-            await db.Label.create({
-                code: labelCode,
-                value: item?.header?.class?.classType
+            await db.Label.findOrCreate({
+                where: { code: labelCode },
+                defaults: {
+                    code: labelCode,
+                    value: item?.header?.class?.classType
+                }
+
             })
             await db.Overview.create({
                 id: overviewId,
